@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin page</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+
+        }
+        
+       /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0d1b2a;
+      color: white;
+      padding: 15px 40px;
+      position: sticky;
+      top:0;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #f4a261;
+    }
+
+    .logo {
+        font-weight: 600;
+        font-size: 2rem;
+        color: white;
+        text-decoration: none;
+    }
+
+    /* Hamburger */
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    /* Animate into an "X" */
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+    
+
+        .authh-section {
+            display: flex;
+            justify-content: center;
+            min-height: 90vh;
+            align-items: center;
+            line-height: 1.6;
+            padding: 40px 20px;
+            background-color: linear-gradient(135deg, #004aad, #0084ff);
+        }
+
+        .auth-box {
+           background: #fff;
+           padding: 40px;
+           width: 100%;
+           max-width: 400px;
+           text-align: center;
+           box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+           border-radius: 15px;
+        }
+
+        .auth-box h2 {
+            color: #004aad;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .auth-box p {
+            color: #444;
+            margin-bottom: 20px;
+        }
+        
+        .auth-box form{
+           display: flex;
+           flex-direction: column;
+           gap: 10px;
+        }
+
+        .auth-box input {
+            padding: 15px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+            transition: 0,3s;
+        }
+
+        .auth-box input:focus {
+            border-color: #004aad;
+        }
+        
+        .btn {
+            padding: 15px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 15px;
+            border: none;
+            color: white;
+            background: #004aad;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .btn:hover {
+            background: #00327a;
+            transform: translateY(-2px);
+        }
+
+        .switch-text a {
+            margin-top: 15px;
+            color: #004aad;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9);}
+            to { opacity: 1; transform: scale(1);}
+        }
+
+        .animate-slide {
+            animation: SlideIn 0.8s ease forwards;
+        }
+
+        .animate-fade {
+            animation: fadein 0.9s ease forwards;
+        }
+
+        /* RESPONSIVE */
+        
+        @media (max-width: 768px) {
+            #nav-links {
+               display: none;
+            flex-direction: column;
+            background: #0d1b2a;
+            position: absolute;
+            top: 60px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 20px 0; 
+            
+        }
+
+        #nav-links.active {
+        display: flex;
+       }
+
+       .menu-toggle {
+        display: flex;
+      }
+
+        }        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">NCI</a>
+
+            <!-- Hamburger -->
+             <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+             </div>
+
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nwabout.html">About</a></li>
+                <li><a href="services.html">services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- <li><a href="Signup-page.html" class="active">Sign Up</a></li> -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sign im -->
+     <section class="authh-section">
+        <div class="auth-box animate-slide">
+            <h2>Welcome Back</h2>
+            <p>Sign in to continue your leraning journey</p>
+            <form>
+                <input type="email" name="email" placeholder="Enter your Email Address" required>
+                <input type="password" placeholder="Enter your Password" required>
+                <button type="submit" class="btn">Sign In</button>
+            </form>
+            <p class="switch-text"> Don't have an account? <a href="Signup-page.html">Sign Up</a></p>
+        </div>
+     </section>
+
+        <!-- footerr -->
+        <footer>
+        <p>&copy; 2025 Noble Computer Institute | All Rights Reserved </p>
+        </footer>
+
+        <script>
+            const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuToggle.classList.toggle("active"); // animate bars
+    });
+
+    // reset if resized to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove("active");
+        menuToggle.classList.remove("active");
+      }
+    });
+        </script>
+</body>
+</html>
+

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+
+    <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial";
+    }
+
+        /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0d1b2a;
+      color: white;
+      padding: 15px 40px;
+      position: sticky;
+      top:0;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #f4a261;
+    }
+
+        
+    nav h1 {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+    
+    /* Hamburger */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    /* Animate into an "X" */
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .logo {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 1.5rem;
+        color: white;
+    }
+
+        .hero-contact {
+          padding: 100px 20px;
+          text-align: center;
+          /* min-height: 45vh; */
+          background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url("images/contact-hero.jpg") center/cover no-repeat;
+          color: #fff;
+        }
+
+        .hero-contact h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        .hero-contact p {
+            font-size: 1.2rem;
+
+        }
+
+        .contact-section {
+           padding: 60px 20px;
+           background: #f9f9f9;
+           /* text-align: center; 
+           align-items: center; */
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .contact-info h2, .contact-form h2{
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #004aad;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-info ul {
+            list-style-type: none;
+            margin-bottom: 20px;
+        }
+
+        .contact-info li {
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .contact-form form { 
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            /* padding: 10px; */
+        }
+
+        .contact-form input, .contact-form textarea {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            outline: none;
+            transition: border 0.3s;
+        }
+
+        .contact-form input,
+        .contact-form textarea:focus {
+            border-color: #004aad;
+            /* border-block-end-color: #004aad; */
+        }
+
+        .contact-form button {
+            padding: 12px ;
+            border: none;
+            border-radius: 8px;
+            background: #004aad;
+            color: #fff;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #00327a;
+        }
+/* 
+        .map-section {
+            margin-top: 40px;
+            background-color:#004aad;
+        } */
+
+        footer {
+            text-align: center;
+            background-color: #00327a;
+            padding: 10px;
+            color: whitesmoke;
+        }
+/* GENERAL RESSET FOR MOBILE */
+    body {
+    font-size: 16px; Default
+    font-weight: bold; 
+ }
+
+@media (max-width: 768px){
+  body {
+    font-size: 14px; /* Smaller font on tablets */
+  }
+
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0d1b2a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  #nav-links.active {
+    display: flex;
+ }
+
+ .menu-toggle {
+    display: flex;
+     }
+
+  .hero-text h1 {
+    font-size: 1.6rem;
+  }
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">NCI</a>
+
+            <!-- Hamburger -->
+             <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+             </div>
+
+             <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+             </ul>
+        </nav>
+    </header>
+
+    <!-- hero set -->
+
+    <section class="hero-contact">
+        <div class="hero-text">
+            <h1>Contact Us</h1>
+            <p>We're here to answer your questions and guide your journey.</p>
+        </div>
+    </section>
+
+    <!-- contact form  -->
+
+    <section class="contact-section">
+
+        <div class="contact-container">
+
+
+            <!-- cont-info -->
+            <div class="contact-info">
+                <h2>Get in Touch</h2>
+                <p>Reach out to us for inquiries or enrollment.</p>
+                <ul>
+                    <li><strong>📍 Address:</strong> 18 Igbusi Road, Daleko Estate, Ifo, Ogun State, Nigeria.</li>
+                    <li><strong>&phone; Phone</strong> +234 903 605 7302</li>
+                    <li><strong>✉️ Email</strong> info@nci.com</li>
+                </ul>
+            </div>
+
+            <!-- contact form -->
+
+            <div class="contact-form">
+                <h2>Send Us a message</h2>
+                <form action="">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="6" placeholder="Your Message" id="" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+     <!-- map  -->
+
+    <section class="map-section">
+        <iframe src="#" frameborder="0"></iframe>
+     </section>
+     
+     <!-- Footer -->
+  <footer>
+    <p>© 2025 Noble Computer Institute | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+
+    menuToggle.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        menuToggle.classList.toggle("active");
+    });
+
+     // reset if resized to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove("active");
+        menuToggle.classList.remove("active");
+      }
+    });
+  </script>
+</body>
+</html>

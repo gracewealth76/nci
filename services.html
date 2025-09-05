@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Services</title>
+  <link rel="stylesheet" href="services.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* ===== Global Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* ===== Navigation ===== */
+header {
+  background: #1e2a38;
+  padding: 15px 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #f4a261;
+}
+
+/* harmburger */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+/* Animate */
+.menu-toggle.active .bar:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px); 
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.active .bar:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  height: 100vh;
+  background: url("services.webp") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+/* ===== Services Section ===== */
+.services {
+  padding: 80px 50px;
+  text-align: center;
+  background: #fff;
+}
+
+.services h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #1e2a38;
+}
+
+.service-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.service-card {
+  background: #f9f9f9;
+  padding: 30px 25px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.service-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #f4a261;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: #1e2a38;
+}
+
+.service-card p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* ===== CTA Section ===== */
+.cta {
+  background: #1e2a38;
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+  margin-top: 60px;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  margin-bottom: 25px;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #f4a261;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #e07b39;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #1e2a38;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 50px;
+  font-size: 0.95rem;
+}
+
+  /* RESPONSIVE  */
+
+@media (max-width: 1024px) {
+
+}
+
+@media (max-width: 768px) {
+  #nav-links{
+    display: none;
+    flex-direction: column;
+    background: #0d1b2a;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  #nav-links.active {
+    display: flex;
+  }
+  
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero-text h1 {
+  font-size: 2rem;
+}
+.hero-text p {
+  font-size: 1.1rem;
+  color: #e07b39;
+  /* border: 2px solid #1e2a38; */
+  border-radius: 4px;
+  padding: 5px;
+  font-weight: bold;
+}
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <header>
+    <nav>
+      <a href="index.html" class="logo">NCI</a>
+
+      <!-- hamburg -->
+
+      <div class="menu-toggle" id="menu-toggle">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+
+      <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html" class="active">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ===== Hero Section ===== -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Our Services</h1>
+      <p>We provide innovative solutions tailored to your needs.</p>
+    </div>
+  </section>
+
+  <!-- services -->
+
+  <section class="services">
+    <h2>What We Offer</h2>
+    <div class="service-container">
+      <div class="service-card">
+        <i class="fas fa-laptop-code"></i>
+        <h3>Web Development</h3>
+        <p>We design and build responsive websites that look great and perform seamlessly.</p>
+      </div>
+
+      <div class="service-card">
+        <h3>Computer Training</h3>
+        <p>Master essential computer skills for academics, careers, and business growth.</p>
+      </div>
+
+      <!-- <div class="service-card">
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Mobile App Development</h3>
+        <p>Our apps provide smooth user experiences across Android and iOS platforms.</p>
+      </div> -->
+
+      <!-- <div class="service-card">
+        <i class="fas fa-cloud"></i>
+        <h3>Cloud Solutions</h3>
+        <p>We integrate scalable cloud infrastructure to support your business growth.</p>
+      </div> -->
+
+      <!-- <div class="service-card">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Digital Marketing</h3>
+        <p>From SEO to social media campaigns, we help your brand gain visibility.</p>
+      </div> -->
+
+      <!-- <div class="service-card">
+        <i class="fas fa-shield-alt"></i>
+        <h3>Cybersecurity</h3>
+        <p>Protect your data and systems with our advanced cybersecurity solutions.</p>
+      </div> -->
+
+      <!-- <div class="service-card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Business Consulting</h3>
+        <p>We provide strategic insights that help you make smarter business decisions.</p>
+      </div> -->
+    </div>
+  </section>
+
+  <!-- ===== Call to Action ===== -->
+  <section class="cta">
+    <h2>Ready to Work With Us?</h2>
+    <p>Let’s bring your ideas to life with our professional solutions.</p>
+    <a href="contact.html" class="cta-btn">Get in Touch</a>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 CompanyName. All Rights Reserved.</p>
+  </footer>
+  
+  
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuToggle.classList.toggle("active"); // animate bars
+    });
+
+    // reset if resized to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove("active");
+        menuToggle.classList.remove("active");
+      }
+    });
+  </script>
+</body>
+</html>

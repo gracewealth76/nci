@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            box-sizing: border-box;
+            font-family: "Arial", sans-serif;
+        }
+
+        /* Navbar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0d1b2a;
+      color: white;
+      padding: 15px 40px;
+      position: sticky;
+      top:0;
+      z-index: 1000;
+    }
+
+    nav h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 0 15px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+      color: #f4a261;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: white;
+    }
+    
+    /* Hamburger */
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle .bar {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease;
+    }
+
+    /* Animate into an "X" */
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+    .menu-toggle.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* */
+
+    .auth-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 90vh;
+        padding: 40px;
+        background-color: linear-gradient(135deg, #004aad, #0084ff);
+    }
+
+    .auth-box {
+        background-color: #111;
+        width: 400px;
+        max-width: 100%;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        background: #fff;
+    }
+
+    .auth-box h2 {
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 15px;
+        color: #004aad;
+    }
+
+        .auth-box p {
+            margin-bottom: 15px;
+            text-align: center;
+            color: #444;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .auth-box form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .auth-box input {
+            padding: 15px;
+            border: 1px solid #004aad;
+            border-radius: 25px;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        /* .auth-box input:focus {
+
+        } */
+
+        .auth-box .btn {
+            padding: 15px;
+            border: none;
+            border-radius: 25px;
+            background: #004aad;
+            font-weight: bold;
+            font-size: 15px;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .auth-box .btn:hover {
+            background: #00327a;
+            transform: translateY(-2px);
+        }
+
+         .txt a {
+            margin-top: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #004aad;
+
+         }
+
+         /* Responsive */
+
+        @media (max-width: 768px) {
+
+      #nav-links {
+        display: none;
+        flex-direction: column;
+        background: #0d1b2a;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+      }
+
+      #nav-links.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+
+    }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo"><h1>NCI</h1></a>
+
+            <!-- Hamburger -->
+             <div class="menu-toggle" id="menu-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul id="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="nwabout.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="signin-page.html" class="active">Sign In</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="auth-section">
+        <div class="auth-box">
+            <h2>Create Account</h2>
+            <p>Join us and start building your future today</p>
+
+            <form>
+                <input type="name" placeholder="Fullname" required>
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Create Password" required>
+                <input type="password" placeholder="Confirm Password" required>
+                <button type="submit" class="btn"> Sign up</button>
+            </form>
+            <p class="txt">Already have an account? <a href="signin-page.html">Sign in</a></p>
+        </div>
+    </section>
+
+    <!-- footer -->
+     <p>&copy; 2025 Noble Computer Institue | All Rights Reserved.</p>
+
+     <script>
+        const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      menuToggle.classList.toggle("active"); // animate bars
+    });
+
+    // reset if resized to desktop
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 768) {
+        navLinks.classList.remove("active");
+        menuToggle.classList.remove("active");
+      }
+    });
+     </script>
+</body>
+</html>
